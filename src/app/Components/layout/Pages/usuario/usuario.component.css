@@ -1,0 +1,55 @@
+table {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+  }
+  
+  table.mat-table tr.mat-row, table.mat-table tr.mat-header-row {
+    height: 28px; /* Ajusta este valor según lo necesario */
+  }
+  
+  table.mat-table td.mat-cell, table.mat-table th.mat-header-cell {
+    padding: 4px 8px; /* Reduce el padding interno */
+    font-size: 0.8rem; /* Ajusta el tamaño del texto si es necesario */
+  }
+
+  /* Mejora el diseño general de la tabla */
+table.mat-table {
+  border-collapse: collapse;
+  background-color: #ffffff; /* Fondo blanco */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border-radius: 8px; /* Bordes redondeados */
+  overflow: hidden; /* Para manejar el radio */
+}
+
+/* Estilo para las celdas y encabezados */
+table.mat-table th.mat-header-cell, table.mat-table td.mat-cell {
+  padding: 10px 16px; /* Espaciado interno */
+  text-align: left; /* Alinear texto a la izquierda */
+  font-size: 0.9rem; /* Tamaño de fuente */
+  border-bottom: 1px solid #e0e0e0; /* Línea divisoria */
+}
+
+/* Encabezado de la tabla */
+table.mat-table th.mat-header-cell {
+  background-color: #0b3a97; /* Color de fondo */
+  color: #ffffff; /* Texto blanco */
+  font-weight: bold; /* Negrita */
+}
+
+/* Filas alternadas */
+table.mat-table tr.mat-row:nth-child(odd) {
+  background-color: #f9f9f9; /* Color de fondo para filas impares */
+}
+
+/* Filas al pasar el mouse */
+table.mat-table tr.mat-row:hover {
+  background-color: #e3f2fd; /* Azul claro */
+}
+  
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}

@@ -1,0 +1,31 @@
+<mat-dialog-content class="modal-container">
+  <div class="mat-elevation-z2">
+    <form [formGroup]="formularioPendientesUser" class="form-container">
+
+      <!-- Campo de solo lectura para mostrar el nombre del archivo seleccionado -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Archivo Adjunto</mat-label>
+        <input matInput [value]="selectedFileName || 'No se ha seleccionado ningún archivo'" readonly />
+      </mat-form-field>
+
+      <!-- Botón personalizado para elegir archivo -->
+      <div class="file-input-container">
+        <label for="fileInput" class="custom-file-label">
+          <mat-icon>attach_file</mat-icon> Elegir Archivo
+        </label>
+        <input id="fileInput" type="file" (change)="onFileSelected($event)" accept=".pdf,.doc,.docx" hidden />
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <!-- Botones -->
+      <div class="buttons">
+        <button mat-raised-button mat-dialog-close color="warn">Volver</button>
+        <button mat-raised-button color="primary" [disabled]="!selectedFile" (click)="guardarEditar_Usuario()">
+          {{ botonAccion }}
+        </button>
+      </div>
+
+    </form>
+  </div>
+</mat-dialog-content>

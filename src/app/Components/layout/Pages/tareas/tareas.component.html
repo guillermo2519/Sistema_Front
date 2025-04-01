@@ -1,0 +1,124 @@
+<hr class="hidden-line">
+<h1 class="titulo">Control de Tareas</h1>
+
+<mat-card class="document-card">
+  <mat-card-title class="title">Alta tarea</mat-card-title>
+  <mat-divider class="divider"></mat-divider>
+  
+  <hr class="hidden-line">
+
+  <form [formGroup]="tareasForm" (ngSubmit)="guardarTarea()">
+    <div class="form-columns">
+      
+      <div class="column">
+        <mat-form-field appearance="outline" class="form-group small-form-field">
+          <mat-label>Título</mat-label>
+          <input matInput formControlName="TITLE" placeholder="Título" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-group small-form-field">
+          <mat-label>Descripción</mat-label>
+          <input matInput formControlName="DESCRIPCION" placeholder="Descripción" />
+        </mat-form-field>
+
+      </div>
+      <div class="column">
+        <mat-form-field appearance="outline" class="form-group small-form-field">
+          <mat-label>Estado</mat-label>
+          <mat-select formControlName="COMPLETED">
+            <mat-option value="Pendiente">Pendiente</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-group small-form-field">
+          <mat-label>Proceso</mat-label>
+          <mat-select formControlName="PROCESO">
+            <mat-option value="analitico">Analítico</mat-option>
+            <mat-option value="operativo">Operativo</mat-option>
+            <mat-option value="estratégico">Estratégico</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </div>
+
+      <div class="column">
+        <mat-form-field appearance="outline" class="form-group small-form-field">
+          <mat-label>Aprueba</mat-label>
+          <mat-select formControlName="APRUEBA">
+            <mat-option value="gerente">Gerente</mat-option>
+            <mat-option value="supervisor">Supervisor</mat-option>
+            <mat-option value="auditor">Auditor</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+    </div>
+    <div class="buttons">
+      <button mat-raised-button color="primary" type="submit">Guardar</button>
+    </div>
+  </form>
+</mat-card>
+
+<mat-card class="document-card">
+  <table mat-table [dataSource]="dataListaTareas">
+
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>Título</th>
+      <td mat-cell *matCellDef="let element">{{element.title}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="descripcion">
+      <th mat-header-cell *matHeaderCellDef>Descripción</th>
+      <td mat-cell *matCellDef="let element">{{element.descripcion}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="completed">
+      <th mat-header-cell *matHeaderCellDef>Estado</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.completed ? 'Completado' : 'Pendiente' }}
+      </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="proceso">
+      <th mat-header-cell *matHeaderCellDef>Proceso</th>
+      <td mat-cell *matCellDef="let element">{{element.proceso}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="aprueba">
+      <th mat-header-cell *matHeaderCellDef>Aprueba</th>
+      <td mat-cell *matCellDef="let element">{{element.aprueba}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="createD_AT">
+      <th mat-header-cell *matHeaderCellDef>Fecha de Creación</th>
+      <td mat-cell *matCellDef="let element">{{element.createD_AT}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="updateD_AT">
+      <th mat-header-cell *matHeaderCellDef>Fecha de Actualización</th>
+      <td mat-cell *matCellDef="let element">{{element.updateD_AT}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="editar">
+      <th mat-header-cell *matHeaderCellDef>Acciones</th>
+      <td mat-cell *matCellDef="let element">
+        <div style="display: flex; gap: 8px;"> 
+          <button mat-icon-button color="primary" (click)="editarTarea(element)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="delete(element)">
+            <mat-icon>delete</mat-icon>
+          </button> 
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnasTabla"></tr>
+<tr mat-row *matRowDef="let row; columns: columnasTabla;" [ngClass]="{'completado': row.completed}"></tr>
+
+  </table>
+
+  <div class="footer-container">
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+</mat-card>

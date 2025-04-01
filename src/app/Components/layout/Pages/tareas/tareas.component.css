@@ -1,0 +1,203 @@
+.container {
+    width: 70%;
+    margin: auto;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .page-title {
+    font-size: 1.0rem;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color: #0b3a97;
+  }
+  
+  .titulo {
+    color: rgb(20, 20, 138);
+    margin: 10px 0px 0px 20px;
+  }
+  
+  
+  .hidden-line {
+    border: none;
+    height: 10px;
+    margin: 0;
+  }
+  
+  mat-card {
+    padding: 15px;
+  }
+  
+  .title {
+    margin: 10px;
+  }
+  
+  mat-card-title {
+    font-size: 1.0rem;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  
+  .document-card {
+    margin: 10px; /* Ajusta el padding según lo que necesites */
+  }
+  
+  mat-form-field.small-form-field {
+    width: 62%; /* Ajusta el ancho según tus necesidades */
+    font-size: 0.75rem; /* Reducir tamaño de la fuente */
+  }
+  
+  mat-form-field.small-form-field .mat-form-field-wrapper {
+    padding: 2px; /* Reducir padding interno */
+  }
+  
+  mat-form-field.small-form-field .mat-input-element {
+    padding: 4px !important; /* Ajustar el padding interno del input */
+    font-size: 0.8rem !important; /* Reducir el tamaño del texto */
+  }
+  
+  mat-form-field.small-form-field .mat-select-trigger {
+    font-size: 0.8rem !important;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+  
+  .form-columns {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1px; /* Reducir el espacio entre las columnas */
+  }
+  
+  .column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px; /* Reducir el espacio entre los elementos dentro de cada columna */
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  select {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input[type="file"] {
+    padding: 5px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+  }
+  
+  button {
+    padding: 1px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  button[type="button"] {
+    background-color: #dc3545;
+  }
+  
+  button[type="button"]:hover {
+    background-color: #c82333;
+  }
+  
+  button.mat-icon-button {
+    background-color: #125dad;
+    color: white;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+  }
+  
+  button.mat-icon-button:hover {
+    background-color: #106dd1;
+  }
+  
+  span.selected-file {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  table.mat-table tr.mat-row, table.mat-table tr.mat-header-row {
+    height: 15px; /* Ajusta este valor según lo necesario */
+  }
+  
+  /* Mejora el diseño general de la tabla */
+  table.mat-table {
+  border-collapse: collapse;
+  background-color: #ffffff; /* Fondo blanco */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border-radius: 8px; /* Bordes redondeados */
+  overflow: hidden; /* Para manejar el radio */
+  }
+  
+  /* Estilo para las celdas y encabezados */
+  table.mat-table th.mat-header-cell, table.mat-table td.mat-cell {
+  padding: 10px 16px; /* Espaciado interno */
+  text-align: left; /* Alinear texto a la izquierda */
+  font-size: 0.8rem; /* Tamaño de fuente */
+  border-bottom: 1px solid #e0e0e0; /* Línea divisoria */
+  }
+  
+  /* Encabezado de la tabla */
+  table.mat-table th.mat-header-cell {
+  background-color: #0b3a97; /* Color de fondo */
+  color: #ffffff; /* Texto blanco */
+  font-weight: bold; /* Negrita */
+  }
+  
+  /* Filas alternadas */
+  table.mat-table tr.mat-row:nth-child(odd) {
+  background-color: #f9f9f9; /* Color de fondo para filas impares */
+  }
+  
+  /* Filas al pasar el mouse */
+  table.mat-table tr.mat-row:hover {
+  background-color: #e3f2fd; /* Azul claro */
+  }
+  
+  .small-square-button mat-icon {
+    font-size: 10px; /* Ajusta el tamaño del ícono */
+  }
+
+  .completada {
+    background-color: #49e40b; 
+  }
+  
+  

@@ -1,0 +1,95 @@
+/* Estilo para el contenedor del diálogo (el área que rodea el formulario) */
+::ng-deep .mat-dialog-container {
+    width: 50%; /* 50% del ancho del contenedor padre */
+    max-width: 600px; /* Limita el tamaño máximo */
+    min-width: 300px; /* Limita el tamaño mínimo */
+    padding: 1px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    
+  }
+  
+  /* Estilo opcional para centrar el diálogo */
+  ::ng-deep .cdk-overlay-pane {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @media (min-width: 768px) {
+    ::ng-deep .mat-dialog-container {
+      width: 50%; /* A partir de 768px ocupa el 50% */
+    }
+  }
+  
+  ::ng-deep .mat-dialog-container {
+    width: 50%;
+    max-width: 700px;
+    min-width: 400px;
+    max-height: 90vh; /* Limita la altura del contenedor */
+    margin: 100px;
+    box-shadow: 0 4px 6px rgb(6, 2, 65);
+    border-radius: 8px;
+    overflow: hidden; /* Evita el desbordamiento en el contenedor */
+  }
+  
+  /* Estilo para el contenido del diálogo (formulario) */
+  .mat-dialog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-x: hidden;
+    overflow-y: hidden; /* Cambiar de 'auto' a 'hidden' para evitar el scroll */
+    max-height: 80vh; /* Limitar la altura del contenido */
+    background-color: #fff; /* Fondo blanco para el contenido del formulario */
+  }
+  
+  /* Ajustes adicionales para mejorar la apariencia del formulario */
+  .mat-form-field {
+    font-size: 11px; /* Reducir aún más el tamaño de fuente */
+    width: auto; /* Ajustar automáticamente al contenido */
+    min-width: 100px; /* Ancho mínimo para evitar campos demasiado pequeños */
+  
+  }
+  
+  
+  /* Ajustar los campos en filas de dos columnas */
+  .row {
+    display: flex;
+    gap: 4px; /* Reducir separación entre columnas */
+    margin: 2px; /* Espaciado inferior para filas */
+  }
+  
+  .form-group {
+    margin: 2px; /* Reducir espacio entre elementos */
+  }
+  
+  .small-field {
+    flex: 1; /* Campos iguales en tamaño dentro de una fila */
+  }
+  
+  /* Campo de ancho completo */
+  .full-width {
+    width: 98%;
+    margin: 4px; /* Espaciado inferior */
+  }
+  
+  tr.mat-row:hover {
+    background-color: #f5f5f5; /* Color al pasar el ratón sobre la fila */
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Compactar botones */
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px; /* Reducir espacio superior */
+  }
+  
+  .buttons button {
+    font-size: 11px; /* Tamaño de fuente más pequeño */
+    padding: 2px 6px; /* Reducir relleno */
+    min-width: 60px; /* Evitar botones demasiado pequeños */
+  }

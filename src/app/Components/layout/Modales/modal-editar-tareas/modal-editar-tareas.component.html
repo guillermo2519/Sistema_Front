@@ -1,0 +1,50 @@
+<mat-dialog-content>
+  <div class="mat-elevation-z2">
+    <form [formGroup]="formularioTarea">
+      <div class="row">
+        <mat-form-field appearance="outline" class="form-group small-field">
+          <mat-label>Estado</mat-label>
+          <mat-select formControlName="COMPLETED">
+            <mat-option [value]="true">Completado</mat-option>
+            <mat-option [value]="false">Pendiente</mat-option>
+          </mat-select>
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline" class="form-group small-field">
+          <mat-label>Proceso</mat-label>
+          <mat-select formControlName="proceso">
+            <mat-option value="analitico">Analítico</mat-option>
+            <mat-option value="operativo">Operativo</mat-option>
+            <mat-option value="estratégico">Estratégico</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline" class="form-group full-width">
+        <mat-label>Título</mat-label>
+        <input matInput formControlName="title" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-group full-width">
+        <mat-label>Descripción</mat-label>
+        <textarea matInput formControlName="descripcion"></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-group small-field">
+        <mat-label>Aprueba</mat-label>
+        <mat-select formControlName="aprueba">
+          <mat-option value="gerente">Gerente General</mat-option>
+          <mat-option value="supervisor">Supervisor</mat-option>
+          <mat-option value="auditor">Auditor</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="buttons">
+        <button mat-raised-button mat-dialog-close color="warn">Volver</button>
+        <button mat-raised-button color="primary" [disabled]="formularioTarea.invalid" (click)="guardarEditar_Tarea()">
+          {{ botonAccion }}
+        </button>
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>

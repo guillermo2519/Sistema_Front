@@ -1,0 +1,55 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button> 
+    <h1>Sistema de Gestión de Calidad</h1>
+    <span style="flex: 1 1 auto;"></span>
+    <label style="font-size: 14px; margin-right: 20px;">
+      {{ correoUsuario }} | {{ rolUsuario }}
+    </label>
+   <!-- Icono de notificación con contador -->
+<button mat-icon-button [matMenuTriggerFor]="menuNotificaciones">
+  <mat-icon>notifications</mat-icon>
+  <span *ngIf="notificacionesNoLeidas > 0" class="notificacion-badge">
+    {{ notificacionesNoLeidas }}
+  </span>
+  
+  
+</button>
+
+<!-- Menú de notificaciones desplegable -->
+<mat-menu #menuNotificaciones="matMenu">
+
+  <mat-list *ngIf="listaNotificaciones.length > 0">
+    <mat-list-item *ngFor="let notificacion of listaNotificaciones">
+      <mat-icon mat-list-icon>{{ notificacion.leido ? 'check_circle' : 'error' }}</mat-icon>
+      <div mat-line>{{ notificacion.mensaje }}</div>
+      <div mat-line class="fecha">{{ notificacion.fecha }}</div>
+    </mat-list-item>
+  </mat-list>
+</mat-menu>
+
+    <button mat-icon-button (click)="cerrarSesion()">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav opened="true" mode="side" style="width: 300px">
+    <mat-nav-list>
+
+      <mat-list-item *ngIf="shouldShowMenu('tareas')">
+        <mat-icon mat-list-icon>insert_drive_file</mat-icon>
+        <div mat-line (click)="navigateTo('tareas')">Tareas</div>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div style="height: 90vh;">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

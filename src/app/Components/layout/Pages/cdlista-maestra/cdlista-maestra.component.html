@@ -1,0 +1,55 @@
+<h1 class="titulo" >Lista Maestra</h1>
+
+<!--  Tabla -->
+<mat-card class="document-card">
+
+    <table mat-table [dataSource]="dataListaDocumentos">
+  
+  <ng-container matColumnDef="codigo">
+    <th mat-header-cell *matHeaderCellDef>Código</th>
+    <td mat-cell *matCellDef="let element">{{element.codigo}}</td>
+</ng-container>
+
+  
+  <ng-container matColumnDef="nombrE_DOCUMENTO">
+      <th mat-header-cell *matHeaderCellDef>Nombre del Documento</th>
+      <td mat-cell *matCellDef="let element">{{element.nombrE_DOCUMENTO}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="proceso">
+    <th mat-header-cell *matHeaderCellDef>Proceso</th>
+    <td mat-cell *matCellDef="let element">{{element.proceso}}</td>
+</ng-container>
+
+  <ng-container matColumnDef="fechA_CREACION">
+      <th mat-header-cell *matHeaderCellDef>Fecha de Solicitud</th>
+      <td mat-cell *matCellDef="let element">{{ element.fechA_CREACION | date: 'dd/MM/yyyy' }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="tiempO_RETENCION">
+    <th mat-header-cell *matHeaderCellDef>Tiempo de retencion</th>
+    <td mat-cell *matCellDef="let element">{{element.tiempO_RETENCION}}</td>
+  </ng-container>
+  
+  <ng-container matColumnDef="archivO_URL">
+    <th mat-header-cell *matHeaderCellDef>Archivo</th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-raised-button color="primary" (click)="verDocumento(element.archivO_URL)">Ver Documento</button>
+    </td>
+  </ng-container>
+  
+  
+
+    <tr mat-header-row *matHeaderRowDef="columnasTabla"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnasTabla;"></tr>
+  </table>
+  
+  <div class="footer-container">
+    <div class="button-container">
+      <button mat-raised-button color="primary" (click)="exportarTablaExcel()">Exportar a Excel</button>
+    </div>
+    <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+  
+    
+  </mat-card>

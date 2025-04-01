@@ -1,0 +1,88 @@
+<mat-dialog-content>
+    <div class="mat-elevation-z2">
+      <form [formGroup]="formularioDocumental">
+        <div class="row">
+          
+          <mat-form-field appearance="outline" class="form-group small-field">
+            <mat-label>Motivo Alta</mat-label>
+            <mat-select formControlName="motivO_ALTA">
+              <mat-option value="normativo">Requisito normativo</mat-option>
+              <mat-option value="actualizacion">Actualización</mat-option>
+              <mat-option value="nuevo">Nuevo Procedimiento</mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" class="form-group small-field">
+            <mat-label>Tipo Documento</mat-label>
+            <mat-select formControlName="tipO_DOCUMENTO">
+              <mat-option value="procedimiento">Procedimiento</mat-option>
+              <mat-option value="manual">Manual</mat-option>
+              <mat-option value="registro">Registro</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+  
+        <mat-form-field appearance="outline" class="form-group full-width">
+          <mat-label>Código</mat-label>
+          <input matInput formControlName="codigo" />
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="form-group full-width">
+          <mat-label>Tiempo Retención</mat-label>
+          <mat-select formControlName="tiempO_RETENCION">
+            <mat-option value="1">1 año</mat-option>
+            <mat-option value="3">3 años</mat-option>
+            <mat-option value="5">5 años</mat-option>
+          </mat-select>
+        </mat-form-field>
+        
+  
+        <div class="row">
+          <mat-form-field appearance="outline" class="form-group small-field">
+            <mat-label>Proceso</mat-label>
+            <mat-select formControlName="proceso">
+              <mat-option value="analitico">Analítico</mat-option>
+              <mat-option value="operativo">Operativo</mat-option>
+              <mat-option value="estratégico">Estratégico</mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" class="form-group small-field">
+            <mat-label>Aprueba</mat-label>
+            <mat-select formControlName="aprueba">
+              <mat-option value="gerente">Gerente General</mat-option>
+              <mat-option value="supervisor">Supervisor</mat-option>
+              <mat-option value="auditor">Auditor</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+  
+        <mat-form-field appearance="outline" class="form-group full-width">
+          <mat-label>Nombre Documento</mat-label>
+          <input matInput formControlName="nombrE_DOCUMENTO" />
+        </mat-form-field>
+
+     <!--
+        <mat-form-field appearance="outline" class="form-group full-width">
+          <mat-label>Archivo Adjunto</mat-label>
+          <input matInput [value]="formularioDocumental.get('archivO_URL')?.value" readonly />
+        </mat-form-field>
+        <div class="form-group full-width">
+          <a *ngIf="formularioDocumental.get('archivO_URL')?.value" 
+             [href]="formularioDocumental.get('archivO_URL')?.value" 
+             target="_blank">
+          </a>
+        </div>
+     -->   
+
+        <div class="buttons">
+      <button mat-raised-button mat-dialog-close color="warn">Volver</button>
+          <button mat-raised-button color="primary"
+            [disabled]="formularioDocumental.invalid"
+            (click)="guardarEditar_Usuario()"
+            >{{botonAccion}}</button>
+        </div>
+      </form>
+    </div>
+  </mat-dialog-content>
+  
