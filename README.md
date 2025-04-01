@@ -29,14 +29,15 @@ Para acceder al sistema, puedes usar las siguientes credenciales:
 
 3. **Configura el entorno, asegúrate de que las URLs de la API del back-end estén configuradas correctamente. En el archivo src/environments/environment.ts, actualiza las rutas de la API para que apunten al back-end.
 
-export const environment = {
-  production: false,
-  apiUrl: 'https://nombre-de-tu-app.herokuapp.com/api'
-};
+        export const environment = {
+          production: false,
+           apiUrl: 'https:'
+           };
 
 
 4. **Ejecuta la aplicación en modo desarrollo, para iniciar la aplicación en modo desarrollo y ver los cambios en tiempo real, ejecuta:
-    ng serve --o
+
+        ng serve --o
 
 
   
