@@ -10,6 +10,11 @@ Este front-end está diseñado para ser un sistema interactivo y fácil de usar,
 
 1. **Clona el repositorio del front-end**:
    Si aún no has clonado el repositorio, ejecuta el siguiente comando en tu terminal:
+   
+2. Instala las dependencias: Navega al directorio del proyecto clonado e instala las dependencias necesarias usando npm:
+   
 
-   ```bash
-   git clone https://github.com/tu-usuario/tu-repositorio-front-end.git
+   cd tu-repositorio-front-end
+   npm install
+
+
